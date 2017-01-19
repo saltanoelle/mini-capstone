@@ -1,6 +1,11 @@
 <div class="container">
-<h1>Welcome</h1>
+<h1>Shoe Rack</h1>
+<p><img src="http://www.iconsdb.com/icons/preview/purple/shoe-xxl.png"></p>
 <h2>Products:</h2>
+<% @all_products.each do |x|%>
+<p><%= x.name + " " + x.price + " " + x.description%></p>
+<p><% end%></p>
+
 </div>
 
 

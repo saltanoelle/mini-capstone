@@ -1,3 +1,10 @@
+body {
+  text-align:center;
+  background-color: pink;
+}
+h1 {
+  color: blue;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
