@@ -3,7 +3,9 @@
 <p><img src="http://www.iconsdb.com/icons/preview/purple/shoe-xxl.png"></p>
 <h2>Products:</h2>
 <% @all_products.each do |x|%>
-<p><%= x.name + " " + x.price + " " + x.description%></p>
+<a href="/products/<%=x.id%>"><%= x.name %></a>
+<p><%= x.price %></p> 
+<p><%= x.description%></p>
 <p><% end%></p>
 
 </div>
