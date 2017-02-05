@@ -1,16 +1,27 @@
 <p>New Product</p>
-<%= form_tag"/products", method: :post do %>
-  <div>
-    Name: <input type="text" name="title">
-    </div>
+<%= form_tag "/products", method: :post do %>
     <div>
-    Price: <input type="text" name="title">
+     Name: <input type="text" name="name">
     </div>
+    
     <div>
-    Image: <input type="text" name="title">
+     Price: <input type="text" name="price">
     </div>
+    
     <div>
-    Description: <input type="text" name="title">
+     Description: <input type="text" name="description">
     </div>
-  <input type="submit" value="Create Recipe">
-  <% end %>
+
+    <div>
+      <%= label_tag :image %>
+      <%= text_field_tag :image %>
+    </div>
+
+    <div>
+    <%= label_tag :supplier %>
+    <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %>
+    </div>
+
+
+ <input type="submit" value="Create Product">
+<% end %>

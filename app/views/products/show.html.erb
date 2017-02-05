@@ -1,8 +1,35 @@
-<p> Name: <%= @product.name %></p>
-<p> Price: <%= @product.price %></p>
-<p> Image:<%= @product.image %></p>
-<p> Description: <%= @product.description %></p>
+    <div class="row">    
+      <div class="col-sm-9 col-sm-offset-2">
+        <p> Name: <%= @product.name %></p>
+        <span><p>Supplied by: <%= @supplier.name %></p></span>
+        <p><%= @product.sale_message %></p>
+        <p> Price: <%= @product.price %></p>
+        <p>Tax <%= number_to_currency(@product.tax) %></p>
+        <p>Total:<%= number_to_currency(@product.total) %></p>
+        <p> Description: <%= @product.description %></p>
+  
+    
+        <% @images.each do |image| %>
+        <img src ="<%= image.url%>" alt="" class="img-responsive">
+        <%end%>
+   <!--  #image.url -->
+        <%= form_tag "/orders", method: :post do %>
+        <div>
+        <%= label_tag :quantity %>
+        <%= text_field_tag :quantity %>
 
-<%= form_tag "/products/#{@product.id}", method: :delete do%> <!-- #delete method --> 
+        <%= hidden_field_tag :product_id, @product.id %>
+  
+        <%= submit_tag "Buy Now!" %>
+         </div>
+        <% end %> 
+        </div>
+      </div> 
+    </div> 
+
+
+  <%= form_tag "/products/#{@product.id}", method: :delete do%> 
   <input type="submit" value="Delete Product">
-  <% end %>
+  <% end %> 
+
+  

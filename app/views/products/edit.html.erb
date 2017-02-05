@@ -1,9 +1,33 @@
-<p>Edit Product Name:</p>
-<%= form_tag"/products/#{@product.id}", method: :patch do %> 
+<p>Edit Product:</p>
+<%= form_tag "/products/#{@product.id}", method: :patch do %> 
 <!-- #patch -->
+  
   <div>
-    Name: <input type="text" name="name">
-    </div>
-  <input type="submit" value="Edit Product Name">
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @product.name %>
+  </div>        
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, @product.price %>
+  </div>
+       
+  <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @product.image %>
+  </div>
+           
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @product.description %>
+  </div>
+ 
+  <div>
+    <%= label_tag :supplier_id %>
+    <%= text_field_tag :supplier_id, @product.supplier_id %>
+  </div>
+
+  <input type="submit" value="Edit Product">
   <% end %>
+
+
 

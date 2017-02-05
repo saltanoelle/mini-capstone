@@ -1,13 +1,26 @@
-<div class="container">
 <h1>Shoe Rack</h1>
-<p><img src="http://www.iconsdb.com/icons/preview/purple/shoe-xxl.png"></p>
-<h2>Products:</h2>
-<% @all_products.each do |x|%>
-<a href="/products/<%=x.id%>"><%= x.name %></a>
-<p><%= x.price %></p> 
-<p><%= x.description%></p>
-<p><% end%></p>
 
+
+<p><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/124550-200.png"></p>
+
+<h2>Products:</h2>
+ <% if current_user %>
+ <h3><%= current_user.email%></h3>
+ <% end %>
+
+<div class="row">
+<a href="/products?sort=price&sort_order=asc">
+
+<% @products.each do |x|%>
+  <div class ="col-md-4 col-sm-4">
+    <div class="well">
+      <a href="/products/<%=x.id%>"><%= x.name %></a>
+      <p><%= number_to_currency(x.price) %></p> 
+      <p><%= x.description%></p>
+      <img src="<%= x.images.first.url %>" alt="" class="img-responsive product_single_image">
+    </div>
+   </div>     
+<% end%>
 </div>
 
 
