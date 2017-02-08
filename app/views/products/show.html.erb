@@ -4,8 +4,8 @@
         <span><p>Supplied by: <%= @supplier.name %></p></span>
         <p><%= @product.sale_message %></p>
         <p> Price: <%= @product.price %></p>
-        <p>Tax <%= number_to_currency(@product.tax) %></p>
-        <p>Total:<%= number_to_currency(@product.total) %></p>
+      
+    
         <p> Description: <%= @product.description %></p>
   
     
@@ -13,6 +13,7 @@
         <img src ="<%= image.url%>" alt="" class="img-responsive">
         <%end%>
    <!--  #image.url -->
+        <% if current_user %>
         <%= form_tag "/carted_products", method: :post do %>
         <div>
         <%= label_tag :quantity %>
@@ -22,14 +23,16 @@
   
         <%= submit_tag "Add to Cart" %>
          </div>
+         <% end %>  
         <% end %> 
         </div>
       </div> 
     </div> 
 
-<!-- 
-  <%= form_tag "/products/#{@product.id}", method: :delete do%> 
-  <input type="submit" value="Delete Product">
+
+  <% if is_admin? %> <!-- got from application controller          -->
+    <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
+    <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
   <% end %> 
- -->
+
   
