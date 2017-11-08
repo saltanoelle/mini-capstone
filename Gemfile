@@ -30,6 +30,8 @@ gem 'turbolinks', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'seed_dump'
+gem 'aws-sdk', '~>3.0.1' 
+gem 'fog-aws'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
