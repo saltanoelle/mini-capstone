@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def index
     
     @products = Product.all
+
     if params[:category]
      @products = Category.find_by(name: params[:category]).products
     end
@@ -36,7 +37,7 @@ class ProductsController < ApplicationController
       description: params[:description],
       supplier_id: params[:supplier]["supplier_id"]
       )
-    # @product.images.create(url: params[:image], product_id: @product.id)
+    @product.images.create(url: params[:image], product_id: @product.id)
 
     if @product.save
     flash[:success] = "Product successfully created!"
