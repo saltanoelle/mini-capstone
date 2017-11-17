@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get "/products"=>"products#index"
+  get "/"=>"products#index"
 
   post "/search" => "products#search"
 
