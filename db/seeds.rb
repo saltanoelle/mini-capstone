@@ -19,6 +19,26 @@ Supplier.create!([
   phone:"800-123-0000"
   },
   {
+  name:"Poshmark", 
+  email:"poshmark@gmail.com",
+  phone:"800-123-0000"
+  },
+  {
+  name:"Nike", 
+  email:"nike@gmail.com",
+  phone:"800-123-0000"
+  },
+  {
+  name:"Adidas", 
+  email:"adidas@gmail.com",
+  phone:"800-123-0000"
+  },
+  {
+  name:"Real Real", 
+  email:"realreal@gmail.com",
+  phone:"800-123-0000"
+  },
+  {
   name:"Kicks", 
   email:"kicks@gmail.com",
   phone:"800-456-0009"
