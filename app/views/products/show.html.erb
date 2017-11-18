@@ -10,8 +10,8 @@
   
     
         <% @images.each do |image| %>
-        <img src ="<%= image.url%>" alt="" class="img-responsive">
-        <%end%>
+        <img src ="<%= image.url%>" alt="" class="img-responsive" img-align="center";>
+        <%end%><br>
    <!--  #image.url -->
         <% if current_user %>
         <%= form_tag "/carted_products", method: :post do %>

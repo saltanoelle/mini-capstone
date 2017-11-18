@@ -1,10 +1,11 @@
 body {
   text-align:center;
-  background-color: #ffcccc;
+  background-color: #ffb3b3;
 ;
 }
 h1 {
-  color: blue;
+  color: black;
+  font-family: cursive;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
