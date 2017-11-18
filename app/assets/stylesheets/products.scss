@@ -10,5 +10,17 @@ background-image: url("seigaiha.png");
 .well img {
   width: 100%;
       margin: 0 auto;
+      flex:0 0 277px;
+  margin: 15px 0 0 1%;
+  text-align: center;
+  padding-top: calc(50% - 30px);
+  border: solid black 5px;
 
+}
+.box{
+	flex:0 0 277px;
+  margin: 15px 0 0 1%;
+  text-align: center;
+  padding-top: calc(50% - 30px);
+  border: solid black 5px;
 }

@@ -12,15 +12,16 @@
 <a href="/products?sort=price&sort_order=asc">
 
 <% @products.each do |x|%>
-  <div class ="col-md-4 col-sm-4 col-md-4" >
+  <div class ="col-md-3 col-sm-4 col-xs-6 box" >
     <div class="well">
       <a href="/products/<%=x.id%>"><%= x.name %></a>
       <p><%= number_to_currency(x.price) %></p> 
-      <p><%= x.description%></p>
-      <div class="single_image">
+<!--       <p><%= x.description%></p>
+ -->      <div class="single_image">
       <% x.images.each do |image| %>
         <img src ="<%=x.images.first.url%>" alt="" class="img-responsive product_single_image" size ="260x180">
         <%end%>
+
         </div>
     </div>
    </div>     
