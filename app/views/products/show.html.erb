@@ -22,6 +22,9 @@
         <%= hidden_field_tag :product_id, @product.id %>
   
         <%= submit_tag "Add to Cart" %>
+        <%= link_to "Edit", "/products/#{@product.id}/edit", class: "btn btn-success" %>
+        <%= link_to "Delete", "/products/#{@product.id}", {method: :delete, class: "btn btn-danger" }%>
+
          </div>
          <% end %>  
         <% end %> 
